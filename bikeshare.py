@@ -4,7 +4,7 @@ import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+              'washington': 'washington.csv','philadelphia.csv' }
 
 def get_filters():
     """
@@ -20,7 +20,7 @@ def get_filters():
     while True:
         try:
             city=str(input('\nEnter a city '))
-            if city.lower() not in ['chicago','new_york_city','washington']:
+            if city.lower() not in ['chicago','new_york_city','washington','philadelphia']:
                 raise ValueError
         except ValueError:
             print('Invalid input')
