@@ -29,7 +29,7 @@ def get_filters():
 
         try:
             month=str(input('\nEnter a month '))
-            if month.lower() not in ['all','january','february','march','april','may','june']:
+            if month.lower() not in ['all','january','february','march','april','may']:
                 raise ValueError
 
         except ValueError:
@@ -70,7 +70,7 @@ def load_data(city, month, day):
     df['day']=df['Start Time'].dt.weekday_name
     df['st_hour']=df['Start Time'].dt.hour
     if month.lower()!='all':
-        months=['january','february','march','april','may','june']
+        months=['january','february','march','april','may']
         month=months.index(month)+1
         df=df[df['month']==month]
 
@@ -87,7 +87,7 @@ def time_stats(df):
 
     #Display the most common month
     pop_month=df['month'].mode()[0]
-    months=['january','february','march','april','may','june']
+    months=['january','february','march','april','may']
     print("\nThe most common month is {}" .format(months[pop_month-1]))
 
     #Display the most common day of week
